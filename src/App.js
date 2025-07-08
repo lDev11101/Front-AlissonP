@@ -8,6 +8,7 @@ import Usuarios from "./pages/Usuarios";
 import Ventas from "./pages/Ventas";
 import Registros from "./pages/productos/Registros";
 import Reportes from "./pages/productos/Reportes";
+import UsuariosRegistros from "./pages/usuarios/UsuariosRegistros";
 import "@flaticon/flaticon-uicons/css/all/all.css";
 
 function App() {
@@ -25,7 +26,10 @@ function App() {
                 <Route path="registros" element={<Registros />} />
                 <Route path="reportes" element={<Reportes />} />
               </Route>
-              <Route path="/usuarios" element={<Usuarios />} />
+              <Route path="/usuarios" element={<Usuarios />}>
+                <Route index element={<Navigate to="registros" replace />} />
+                <Route path="registros" element={<UsuariosRegistros />} />
+              </Route>
               <Route path="/ventas" element={<Ventas />} />
             </Routes>
           </main>

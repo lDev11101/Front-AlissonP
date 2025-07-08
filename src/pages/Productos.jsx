@@ -16,7 +16,7 @@ const Productos = () => (
           end
         >
           <i className="fi fi-br-registration-paper mr-2"></i>
-          Registros
+          Productos
         </NavLink>
         <NavLink
           to="reportes"
