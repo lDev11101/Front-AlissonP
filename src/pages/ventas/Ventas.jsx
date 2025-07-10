@@ -1,3 +1,4 @@
+// src/pages/Ventas.jsx
 import { NavLink, Outlet } from "react-router-dom";
 
 const tabClass =
