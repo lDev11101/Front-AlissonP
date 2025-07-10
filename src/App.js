@@ -5,13 +5,15 @@ import Actividades from "./pages/Actividades";
 import Almacen from "./pages/Almacen";
 import Productos from "./pages/Productos";
 import Usuarios from "./pages/Usuarios";
-import Ventas from "./pages/Ventas";
+import Ventas from "./pages/Ventas"; // Componente principal de Ventas
 import Registros from "./pages/productos/Registros";
 import Reportes from "./pages/productos/Reportes";
 import UsuariosRegistros from "./pages/usuarios/UsuariosRegistros";
 import RegistrosAlmacen from "./pages/almacen/RegistrosAlmacen";
 import MovimientosAlmacen from "./pages/almacen/MovimientosAlmacen";
 import ReportesAlmacen from "./pages/almacen/ReportesAlmacen";
+import RegistrosVentas from "./pages/ventas/RegistrosVentas";
+import ReportesVentas from "./pages/ventas/ReportesVentas";
 import "@flaticon/flaticon-uicons/css/all/all.css";
 
 function App() {
@@ -38,7 +40,12 @@ function App() {
                 <Route index element={<Navigate to="registros" replace />} />
                 <Route path="registros" element={<UsuariosRegistros />} />
               </Route>
-              <Route path="/ventas" element={<Ventas />} />
+              {/* Módulo de Ventas actualizado */}
+              <Route path="/ventas" element={<Ventas />}>
+                <Route index element={<Navigate to="registros" replace />} />
+                <Route path="registros" element={<RegistrosVentas />} />
+                <Route path="reportes" element={<ReportesVentas />} />
+              </Route>
             </Routes>
           </main>
         </div>
