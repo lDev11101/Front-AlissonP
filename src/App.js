@@ -9,6 +9,9 @@ import Ventas from "./pages/Ventas";
 import Registros from "./pages/productos/Registros";
 import Reportes from "./pages/productos/Reportes";
 import UsuariosRegistros from "./pages/usuarios/UsuariosRegistros";
+import RegistrosAlmacen from "./pages/almacen/RegistrosAlmacen";
+import MovimientosAlmacen from "./pages/almacen/MovimientosAlmacen";
+import ReportesAlmacen from "./pages/almacen/ReportesAlmacen";
 import "@flaticon/flaticon-uicons/css/all/all.css";
 
 function App() {
@@ -20,7 +23,12 @@ function App() {
           <main className="flex-1 p-6 bg-[#181F2A] min-h-screen min-w-0 text-white">
             <Routes>
               <Route path="/actividades" element={<Actividades />} />
-              <Route path="/almacen" element={<Almacen />} />
+              <Route path="/almacen" element={<Almacen />}>
+                <Route index element={<Navigate to="registros" replace />} />
+                <Route path="registros" element={<RegistrosAlmacen />} />
+                <Route path="movimientos" element={<MovimientosAlmacen />} />
+                <Route path="reportes" element={<ReportesAlmacen />} />
+              </Route>
               <Route path="/productos" element={<Productos />}>
                 <Route index element={<Navigate to="registros" replace />} />
                 <Route path="registros" element={<Registros />} />
